@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DnDStore.Backend")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fabf4b24c802569466463968c42683afe1bc7fc9")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+00d937768e35857ec089e442466e5b5a8c182d97")]
 [assembly: System.Reflection.AssemblyProductAttribute("DnDStore.Backend")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DnDStore.Backend")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
