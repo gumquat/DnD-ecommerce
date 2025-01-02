@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Evan Newman\\Desktop\\Github Repos\\ENOLVE\\DnD-ecommerce\\Backend\\DnDStore.Backend\\DnDStore.Backend.csproj": {}
+    "C:\\Users\\Evan Newman\\Desktop\\Github Repos\\DnD-ecommerce\\Backend\\DnDStore.Backend\\DnDStore.Backend.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Evan Newman\\Desktop\\Github Repos\\ENOLVE\\DnD-ecommerce\\Backend\\DnDStore.Backend\\DnDStore.Backend.csproj": {
+    "C:\\Users\\Evan Newman\\Desktop\\Github Repos\\DnD-ecommerce\\Backend\\DnDStore.Backend\\DnDStore.Backend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Evan Newman\\Desktop\\Github Repos\\ENOLVE\\DnD-ecommerce\\Backend\\DnDStore.Backend\\DnDStore.Backend.csproj",
+        "projectUniqueName": "C:\\Users\\Evan Newman\\Desktop\\Github Repos\\DnD-ecommerce\\Backend\\DnDStore.Backend\\DnDStore.Backend.csproj",
         "projectName": "DnDStore.Backend",
-        "projectPath": "C:\\Users\\Evan Newman\\Desktop\\Github Repos\\ENOLVE\\DnD-ecommerce\\Backend\\DnDStore.Backend\\DnDStore.Backend.csproj",
+        "projectPath": "C:\\Users\\Evan Newman\\Desktop\\Github Repos\\DnD-ecommerce\\Backend\\DnDStore.Backend\\DnDStore.Backend.csproj",
         "packagesPath": "C:\\Users\\Evan Newman\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Evan Newman\\Desktop\\Github Repos\\ENOLVE\\DnD-ecommerce\\Backend\\DnDStore.Backend\\obj\\",
+        "outputPath": "C:\\Users\\Evan Newman\\Desktop\\Github Repos\\DnD-ecommerce\\Backend\\DnDStore.Backend\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Evan Newman\\AppData\\Roaming\\NuGet\\NuGet.Config"

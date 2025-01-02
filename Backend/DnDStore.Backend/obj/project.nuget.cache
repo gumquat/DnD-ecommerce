@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "cTVnbaaiMGU=",
+  "dgSpecHash": "qLPdSoCGG9w=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Evan Newman\\Desktop\\Github Repos\\ENOLVE\\DnD-ecommerce\\Backend\\DnDStore.Backend\\DnDStore.Backend.csproj",
+  "projectFilePath": "C:\\Users\\Evan Newman\\Desktop\\Github Repos\\DnD-ecommerce\\Backend\\DnDStore.Backend\\DnDStore.Backend.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Evan Newman\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\Evan Newman\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
