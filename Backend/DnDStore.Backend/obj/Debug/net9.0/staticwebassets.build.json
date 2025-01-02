@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "h1sz9IcExIs1j8v0Kj4WyyTTJTenzS4OiTvw8t1q/6I=",
+  "Source": "DnDStore.Backend",
+  "BasePath": "_content/DnDStore.Backend",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
