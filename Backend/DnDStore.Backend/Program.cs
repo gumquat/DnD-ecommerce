@@ -8,11 +8,25 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllers();
 
+// Enable CORS
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAllOrigins", builder =>
+    {
+        builder.AllowAnyOrigin()
+            .AllowAnyMethod()
+            .AllowAnyHeader();
+    });
+});
+
 // Register DbContext with PostgreSQL using connection string
 builder.Services.AddDbContext<DnDStoreContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 var app = builder.Build();
+
+// Use CORS policy
+app.UseCors("AllowAllOrigins");
 
 // Add Swagger configuration
 builder.Services.AddSwaggerGen(options =>
