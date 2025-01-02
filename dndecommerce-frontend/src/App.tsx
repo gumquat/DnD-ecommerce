@@ -1,6 +1,5 @@
 import React from "react";
 import "./App.css";
-import ProductList from "./Components/ProductList";
 
 function App() {
   return (
@@ -18,7 +17,6 @@ function App() {
           Learn React
         </a>
       </header>
-      <ProductList />
     </div>
   );
 }

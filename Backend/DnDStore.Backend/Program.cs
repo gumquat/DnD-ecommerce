@@ -23,16 +23,16 @@ builder.Services.AddCors(options =>
 builder.Services.AddDbContext<DnDStoreContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-var app = builder.Build();
-
-// Use CORS policy
-app.UseCors("AllowAllOrigins");
-
-// Add Swagger configuration
+// Add Swagger configuration - moved before app.Build()
 builder.Services.AddSwaggerGen(options =>
 {
     options.SwaggerDoc("v1", new OpenApiInfo { Title = "DnDStore API", Version = "v1" });
 });
+
+var app = builder.Build();
+
+// Use CORS policy
+app.UseCors("AllowAllOrigins");
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
