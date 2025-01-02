@@ -1,13 +1,12 @@
 import React from "react";
 import "./App.css";
-import DaggerDisplay from "./Components/DisplayDagger";
+import DisplayDagger from "./Components/DisplayDagger";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   return (
-    <div className="App">
-      <div className="container p-4">
-        <DaggerDisplay />
-      </div>
+    <div className="container p-4">
+      <DisplayDagger />
     </div>
   );
 }

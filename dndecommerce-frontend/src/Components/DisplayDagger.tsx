@@ -1,10 +1,67 @@
+// Types for the D&D 5e API response
+interface DamageType {
+  index: string;
+  name: string;
+  url: string;
+}
+
+interface Damage {
+  damage_dice: string;
+  damage_type: DamageType;
+}
+
+interface Cost {
+  quantity: number;
+  unit: string;
+}
+
+interface EquipmentCategory {
+  index: string;
+  name: string;
+  url: string;
+}
+
+interface WeaponProperty {
+  index: string;
+  name: string;
+  url: string;
+}
+
+interface Range {
+  normal: number;
+  long?: number;
+}
+
+interface ThrowRange {
+  normal: number;
+  long: number;
+}
+
+interface DaggerEquipment {
+  _id: string;
+  index: string;
+  name: string;
+  equipment_category: EquipmentCategory;
+  weapon_category: string;
+  weapon_range: string;
+  category_range: string;
+  cost: Cost;
+  damage: Damage;
+  range: Range;
+  weight: number;
+  properties: WeaponProperty[];
+  throw_range: ThrowRange;
+  url: string;
+  desc?: string[];
+}
+
 import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-const DaggerDisplay = () => {
-  const [dagger, setDagger] = useState(null);
-  const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(true);
+const DisplayDagger: React.FC = () => {
+  const [dagger, setDagger] = useState<DaggerEquipment | null>(null);
+  const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
     const fetchDagger = async () => {
@@ -15,10 +72,10 @@ const DaggerDisplay = () => {
         if (!response.ok) {
           throw new Error("Failed to fetch dagger data");
         }
-        const data = await response.json();
+        const data: DaggerEquipment = await response.json();
         setDagger(data);
       } catch (err) {
-        setError(err.message);
+        setError(err instanceof Error ? err.message : "An error occurred");
       } finally {
         setLoading(false);
       }
@@ -82,6 +139,15 @@ const DaggerDisplay = () => {
           </div>
         </div>
 
+        {/* Weapon Categories */}
+        <div className="mb-3">
+          <h5 className="fw-bold">Categories</h5>
+          <div className="d-flex gap-2">
+            <span className="badge bg-secondary">{dagger.weapon_category}</span>
+            <span className="badge bg-info">{dagger.weapon_range}</span>
+          </div>
+        </div>
+
         {/* Properties */}
         <div className="mb-3">
           <h5 className="fw-bold">Properties</h5>
@@ -91,6 +157,26 @@ const DaggerDisplay = () => {
                 {prop.name}
               </span>
             ))}
+          </div>
+        </div>
+
+        {/* Range Information */}
+        <div className="mb-3">
+          <h5 className="fw-bold">Range</h5>
+          <div className="d-flex gap-2">
+            <span className="badge bg-secondary">
+              Normal: {dagger.range.normal} ft
+            </span>
+            {dagger.throw_range && (
+              <>
+                <span className="badge bg-info">
+                  Throw (Normal): {dagger.throw_range.normal} ft
+                </span>
+                <span className="badge bg-info">
+                  Throw (Long): {dagger.throw_range.long} ft
+                </span>
+              </>
+            )}
           </div>
         </div>
 
@@ -110,4 +196,4 @@ const DaggerDisplay = () => {
   );
 };
 
-export default DaggerDisplay;
+export default DisplayDagger;
