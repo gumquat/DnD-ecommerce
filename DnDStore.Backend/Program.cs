@@ -19,9 +19,25 @@ builder.Services.AddCors(options =>
     });
 });
 
+// Add HttpClient for DnD API
+builder.Services.AddHttpClient<DndApiService>();
+
 // Register DbContext with PostgreSQL using connection string
 builder.Services.AddDbContext<DnDStoreContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+// Changed from IdentityUser to ApplicationUser
+builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
+    .AddEntityFrameworkStores<ApplicationDbContext>();
+
+// Add CORS policy for React app to access API endpoints
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowReactApp",
+        builder => builder
+            .WithOrigins("http://localhost:5000")
+            .AllowAnyMethod()
+            .AllowAnyHeader());
+});
 
 // Add Swagger configuration - moved before app.Build()
 builder.Services.AddSwaggerGen(options =>
@@ -42,6 +58,19 @@ if (app.Environment.IsDevelopment())
     {
         options.SwaggerEndpoint("/swagger/v1/swagger.json", "DnDStore API v1");
     });
+}
+
+public class ApiResponse
+{
+    public int Count { get; set; }
+    public List<ApiResult> Results { get; set; }
+}
+
+public class ApiResult
+{
+    public string Index { get; set; }
+    public string Name { get; set; }
+    public string Url { get; set; }
 }
 
 app.UseAuthorization();
